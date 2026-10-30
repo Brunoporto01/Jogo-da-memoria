@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+
+        <h1>Jogo da Memória</h1>
+        <p class="subtitle">Teste sua memória e encontre todos os pares!</p>
+
+        <div class="settings">
+            <label for="player-name">Seu nome</label>
+            <input
+                type="text"
+                id="player-name"
+                maxlength="15"
+                placeholder="Digite seu nome"
+            >
+
+            <label for="difficulty">Dificuldade</label>
+            <select id="difficulty">
+                <option value="easy">Fácil - 8 cartas</option>
+                <option value="medium" selected>Médio - 16 cartas</option>
+                <option value="hard">Difícil - 24 cartas</option>
+            </select>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span>Jogadas</span>
+                <strong id="moves">0</strong>
+            </div>
+
+            <div class="info-box">
+                <span>Tempo</span>
+                <strong id="timer">00:00</strong>
+            </div>
+        </div>
+
+        <div id="game-board" class="game-board medium"></div>
+
+        <button id="restart">Reiniciar jogo</button>
+
+        <section class="ranking">
+            <h2>🏆 Ranking</h2>
+
+            <p class="ranking-subtitle">
+                Os cinco melhores resultados de cada dificuldade
+            </p>
+
+            <div class="ranking-tabs">
+                <button class="ranking-tab active" data-level="easy">
+                    Fácil
+                </button>
+
+                <button class="ranking-tab" data-level="medium">
+                    Médio
+                </button>
+
+                <button class="ranking-tab" data-level="hard">
+                    Difícil
+                </button>
+            </div>
+
+            <div id="ranking-list"></div>
+        </section>
+
+        <!-- Tela de vitória -->
+        <div id="victory-modal" class="victory-modal" hidden>
+
+            <div class="victory-content">
+
+                <div class="trophy">🏆</div>
+
+                <h2>Parabéns!</h2>
+
+                <p>Você encontrou todos os pares!</p>
+
+                <div class="victory-stats">
+
+                    <div>
+                        <span>Jogadas</span>
+                        <strong id="final-moves">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Tempo</span>
+                        <strong id="final-time">00:00</strong>
+                    </div>
+
+                </div>
+
+                <p id="record-message"></p>
+
+                <button id="play-again">
+                    Jogar novamente
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
